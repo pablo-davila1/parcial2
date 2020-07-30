@@ -1,6 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QGraphicsView>
+#include <QTimer>
+#include <QObject>
+#include <QGraphicsRectItem>
+#include <QGraphicsItem>
+#include <QGraphicsScene>
+
+
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
