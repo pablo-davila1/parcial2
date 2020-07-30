@@ -22,9 +22,11 @@ MainWindow::MainWindow(QWidget *parent)
      timer->stop();
      connect(timer,SIGNAL(timeout()),this,SLOT(actualizar()));
     //cuerpograf(float x, float y, float vx, float vy, float m, float r);
-     bars.append(new cuerpograf(0,-7000,2,0,70,120));
-     bars.append(new cuerpograf(0,0,0,0,70000,300)); // se agregan los cuerpos(planetas)
-     bars.append(new cuerpograf(4000,5000,-1.6,1.2,25,100));
+     bars.append(new cuerpograf(0,0,0,0,50000,200));
+     bars.append(new cuerpograf(-5000,0,0,-2,70,70)); // se agregan los cuerpos(planetas)
+     bars.append(new cuerpograf(5000,0,0,2,70,70));
+     bars.append(new cuerpograf(0,-5000,2,0,70,70));
+     bars.append(new cuerpograf(0,5000,-2,0,70,70));
      for (int i = 0; i<bars.size();i++){
          bars.at(i)->actualizar(dt);
          scene->addItem(bars.at(i));
