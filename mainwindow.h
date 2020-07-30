@@ -24,6 +24,9 @@ private slots:
     void actualizar();
     void on_pushButton_clicked();
 
+public slots:
+    void spawncaida();
+
 private:
     Ui::MainWindow *ui;
     QTimer *timer;

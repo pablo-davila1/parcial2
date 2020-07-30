@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "caida.h"
+
 #include <QGraphicsView>
 #include <QTimer>
 #include <QObject>
@@ -15,6 +17,10 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
+    srand(time(NULL)); //inicializacion de timer para psicion en la que salen los enemigos y meteoros
+
+
     ui->setupUi(this);
     h_limit = 2000;
     v_limit = 1000;
@@ -73,4 +79,20 @@ void MainWindow::actualizar()
 void MainWindow::on_pushButton_clicked()
 {
     timer->start(dt);
+}
+
+void MainWindow::spawncaida()
+{
+    float posx2, posy2, velx2 , vely2 ,r, mass, K, e;
+    posx2 = 700;
+    posy2 = 400;
+    r = 20;
+    mass = 20;
+    velx2 = 100;
+    vely2 = 3;
+    K = 0.08;
+    e = 0.5;
+
+    caida *ojt = new caida(posx2,posy2, vely2, vely2, mass, r, K,  e);
+
 }
